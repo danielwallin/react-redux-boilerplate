@@ -1,0 +1,32 @@
+{
+  "name": "react-redux-boilerplate-1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "5.0.5",
+    "redux": "3.7.0",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.3.0",
+    "redux-thunk": "2.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0",
+    "concurrently": "^3.5.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.12.1",
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run watch-css\"",
+    "build-css": "node-sass --include-path scss src/scss/_main.scss src/dist/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

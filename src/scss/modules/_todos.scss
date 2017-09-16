@@ -1,0 +1,126 @@
+.todos {
+    &__item {
+        position: relative;
+        margin: 0 $padding;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid #ededed;
+        }
+
+        &Inner {
+            padding: $padding 0;
+            transition: .3s ease-in-out;
+            font-weight: 300;
+            font-size: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            input[type=checkbox] {
+                flex: .1
+            }
+
+            span {
+                flex: 1;
+                margin-left: 1rem;
+            }
+        }
+
+        &Delete {
+            transition: .3s ease;
+            opacity: 1;
+            position: absolute;
+            right: 0;
+            > * {
+                // #d84444
+                font-size: 2rem;
+                color: $primarycolor;
+            }
+        }
+
+        &.completed span {
+            text-decoration: line-through;
+        }
+
+    }
+
+    &__inner {
+        background: #fff;
+        position: relative;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    &__noresults {
+        padding: $padding;
+        transition: .3s ease;
+    }
+
+    &__filter {
+        border-top: 1px solid $bordercolor;
+        padding: $padding/2 $padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li {
+            display: inline-block;
+            border: 1px solid transparent;
+            transition: .3s ease;
+            padding: $padding/4 $padding/2;
+        }
+
+        li.active {
+            border: 1px solid $primarycolor;
+            > * {
+                color: $primarycolor;
+            }
+
+        }
+    }
+
+}
+
+.checkbox {
+    height: 20px;
+    width: 20px;
+
+    input[type=checkbox] {
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+input:checked ~ .control__indicator {
+    background: $primarycolor;
+    &:after {
+        display: block;
+    }
+}
+
+.control__indicator {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #e6e6e6;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        left: 8px;
+        top: 4px;
+        width: 3px;
+        height: 8px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}
