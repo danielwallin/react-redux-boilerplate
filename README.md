@@ -1,7 +1,7 @@
 ## React Redux todoapp boilerplate
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). The project showcases a way of structuring a react app with redux.
 
-[View demo](https://danielwallin1.github.io/react-redux-boilerplate/)
+[View demo](https://danielwallin.github.io/react-redux-boilerplate/)
 
 
 ```bash
